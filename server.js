@@ -65,6 +65,33 @@ app.delete('/todos/:id', function(req, res) {
   }
 })
 
+// PUT /todos/:id
+app.put('/todos/:id', function(req, res) {
+  var todoId = parseInt(req.params.id, 10);
+  var matchedTodo = _.findWhere(todos, {id: todoId});
+  var body = _.pick(req.body, 'description', 'completed');
+  var validAttributes = {};
+
+  if (!matchedTodo) {
+    return res.status(404).send('Could not find item to update.')
+  }
+
+  if (body.hasOwnProperty('completed') && _.isBoolean(body.completed)) {
+    validAttributes.completed = body.completed;
+  } else if (body.hasOwnProperty('completed')) {
+    return res.status(400).send('Completed must be a boolean.')
+  }
+
+  if ( body.hasOwnProperty('description') && _.isString(body.description) && body.description.trim().length > 0) {
+    validAttributes.description = body.description;
+  } else if ( body.hasOwnProperty('description')) {
+    return res.status(400).send("Could not update item.")
+  }
+
+  _.extend(matchedTodo, validAttributes);
+  res.json(matchedTodo);
+})
+
 app.listen(PORT, function() {
   console.log("Express listening on port " + PORT + "!");
 });
