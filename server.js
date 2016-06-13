@@ -34,7 +34,7 @@ app.get('/todos/:id', function(req, res) {
 
 // POST /todos
 app.post('/todos', function(req, res) {
-  var body = req.body;
+  var body = _.pick(req.body, 'description', 'completed');
 
   if (!_.isBoolean(body.completed)) {
     return res.status(400).send("Completed is not a boolean.");
@@ -43,6 +43,8 @@ app.post('/todos', function(req, res) {
   } else if ( body.description.trim().length === 0 ) {
     return res.status(400).send("Description must be present.")
   }
+
+  body.description = body.description.trim();
 
   body.id = todoNextId++;
   todos.push(body);
