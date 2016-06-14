@@ -77,12 +77,15 @@ module.exports = function(sequelize, DataTypes) {
               if (user) {
                 resolve(user);
               } else {
+                // reject if id is not in db
                 reject();
               }
             }, function(e) {
+              // reject if findById fails
               reject();
             })
           } catch(e) {
+            // reject if token is not valid format
             reject();
           }
         });
