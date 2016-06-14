@@ -60,6 +60,7 @@ app.post('/todos', function(req, res) {
   var body = _.pick(req.body, 'description', 'completed');
 
   db.todo.create(body).then(function(todo) {
+    todo.destroy();
     res.json(todo.toJSON());
   }, function(e) {
     res.status(400).json(e);
@@ -69,15 +70,34 @@ app.post('/todos', function(req, res) {
 // DELETE /todos/:id
 app.delete('/todos/:id', function(req, res) {
   var todoId = parseInt(req.params.id, 10);
-  var matchedTodo = _.findWhere(todos, {id: todoId});
+  
+  // First Iteration
+  // db.todo.findById(todoId).then(function(todo) {
+  //   if (!!todo) {
+  //     todo.destroy();
+  //     res.json(todo.toJSON());
+  //   } else {
+  //     res.status(404).send();
+  //   }
+  // }, function(e) {
+  //   res.status(500).send()
+  // });
 
-  if (matchedTodo) {
-    todos.splice((todoId-1), 1);
-    res.json({matchedTodo, "success": "Item was successfully destroyed."});
-  } else {
-    res.status(404).json({"error": "No todo found with that id."});  
-  }
-})
+  db.todo.destroy({
+    where: {
+      id: todoId
+    }
+  }).then(function(rowsDeleted) {
+    if (rowsDeleted === 0) {
+      res.status(404).json({
+        error: 'No todo with id'
+      });
+    } else {
+      // status 204 - everything worked, nothing to send back
+      res.status(204).send();
+    }
+  });
+});
 
 // PUT /todos/:id
 app.put('/todos/:id', function(req, res) {
