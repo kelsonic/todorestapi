@@ -1,24 +1,28 @@
 # Todo REST API
-This is a simple todo-list REST API.
+This is a simple todo-list REST API built primarily with Express and Node.
 
 ## Getting Started
 
-To test out the API it's recommended to use !(Postman)[https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en].
+To test out the API it's recommended to use ![Postman]([)https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en).
 
-**1. Create your account**
+#####1. Create your account
+
    POST to `https://todorestapi.herokuapp.com/api/users`
-   Body:
-   ```
+   
+   Body of your request should look like:
+   ```javascript
     {
         "email": "me@example.com",
         "password": "abc123456789"
     }
    ```
 
-**2. Login**
+#####2. Login
+
    POST to `https://todorestapi.herokuapp.com/api/login`
-   Body:
-   ```
+   
+   Body of your request should look like:
+   ```javascript
     {
         "email": "james@example.com",
         "password": "abc123456789"
@@ -27,10 +31,12 @@ To test out the API it's recommended to use !(Postman)[https://chrome.google.com
 
    Copy the generated token in the Auth header and create an environment variable in Postman with it to add Auth to all of the following requests.
 
-**3. Create a Todo Task**
+#####3. Create a Todo Task
+   
    POST to `https://todorestapi.herokuapp.com/api/todos`
-   Body:
-   ```
+   
+   Body of your request should look like:
+   ```javascript
     {
         "description": "Go for a walk",
         "completed": false
@@ -39,7 +45,7 @@ To test out the API it's recommended to use !(Postman)[https://chrome.google.com
 
    The response should look similar to this:
 
-   ```
+   ```javascript
     {
       "id": 1,
       "description": "Go for a walk",
@@ -50,12 +56,13 @@ To test out the API it's recommended to use !(Postman)[https://chrome.google.com
     }
    ```
 
-**4. Get all Todo Tasks You've Created**
+#####4. Get all Todo Tasks You've Created
+   
    GET to `https://todorestapi.herokuapp.com/api/todos`
 
    The response should look similar to this:
 
-   ```
+   ```javascript
     {
       "id": 1,
       "description": "Go for a walk",
@@ -66,12 +73,13 @@ To test out the API it's recommended to use !(Postman)[https://chrome.google.com
     }
    ```
 
-**5. Get a Specific Todo Task**
+#####5. Get a Specific Todo Task
+   
    GET to `https://todorestapi.herokuapp.com/api/todos/1`
 
    The response should look similar to this:
 
-   ```
+   ```javascript
     {
       "id": 1,
       "description": "Go for a walk",
@@ -82,10 +90,13 @@ To test out the API it's recommended to use !(Postman)[https://chrome.google.com
     }
    ```
 
-**6. Update a Specific Todo Task**
+#####6. Update a Specific Todo Task
+   
    PUT to `https://todorestapi.herokuapp.com/api/todos/1`
-   Body:
-   ```
+   
+   Body of your request should look like:
+   
+   ```javascript
     {
         "description": "updated description",
         "completed": true
@@ -93,7 +104,8 @@ To test out the API it's recommended to use !(Postman)[https://chrome.google.com
    ```
 
    The response should look similar to this:
-   ```
+
+   ```javascript
     {
       "id": 1,
       "description": "updated description",
@@ -104,12 +116,14 @@ To test out the API it's recommended to use !(Postman)[https://chrome.google.com
     }
    ```
 
-**7. Delete a Specific Todo Task**
+#####7. Delete a Specific Todo Task
+   
    DELETE to `https://todorestapi.herokuapp.com/api/todos/1`
 
    The response should be a 204 (No Content).
 
-**8. Logout**
+#####8. Logout
+   
    DELETE to `https://todorestapi.herokuapp.com/api/logout`
 
    The response should be a 204 (No Content).
