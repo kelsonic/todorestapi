@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 // GET homepage
 app.get('/', function(req, res) {
-  res.send('Todo API root');
+  res.send('<center><a href="https://github.com/kelsonic/todorestapi">View Todo REST API Repository on GitHub</a></center>');
 });
 
 // GET /todos?completed=true
