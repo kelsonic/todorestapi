@@ -3,7 +3,7 @@ This is a simple todo-list REST API built primarily with Express and Node.
 
 ## Getting Started
 
-To test out the API it's recommended to use ![Postman]([)https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en).
+To test out the API it's recommended to use [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en).
 
 #####1. Create your account
 
@@ -95,7 +95,7 @@ To test out the API it's recommended to use ![Postman]([)https://chrome.google.c
    PUT to `https://todorestapi.herokuapp.com/api/todos/1`
    
    Body of your request should look like:
-   
+
    ```javascript
     {
         "description": "updated description",
