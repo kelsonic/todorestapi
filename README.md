@@ -5,7 +5,7 @@ This is a simple todo-list REST API built primarily with Express and Node.
 
 To test out the API it's recommended to use [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en).
 
-#####1. Create your account
+###1. Create your account
 
    POST to `https://todorestapi.herokuapp.com/api/users`
    
@@ -17,7 +17,7 @@ To test out the API it's recommended to use [Postman](https://chrome.google.com/
     }
    ```
 
-#####2. Login
+###2. Login
 
    POST to `https://todorestapi.herokuapp.com/api/login`
    
@@ -31,7 +31,7 @@ To test out the API it's recommended to use [Postman](https://chrome.google.com/
 
    Copy the generated token in the Auth header and create an environment variable in Postman with it to add Auth to all of the following requests.
 
-#####3. Create a Todo Task
+###3. Create a Todo Task
    
    POST to `https://todorestapi.herokuapp.com/api/todos`
    
@@ -56,7 +56,7 @@ To test out the API it's recommended to use [Postman](https://chrome.google.com/
     }
    ```
 
-#####4. Get all Todo Tasks You've Created
+###4. Get all Todo Tasks You've Created
    
    GET to `https://todorestapi.herokuapp.com/api/todos`
 
@@ -73,7 +73,7 @@ To test out the API it's recommended to use [Postman](https://chrome.google.com/
     }
    ```
 
-#####5. Get a Specific Todo Task
+###5. Get a Specific Todo Task
    
    GET to `https://todorestapi.herokuapp.com/api/todos/1`
 
@@ -90,7 +90,7 @@ To test out the API it's recommended to use [Postman](https://chrome.google.com/
     }
    ```
 
-#####6. Update a Specific Todo Task
+###6. Update a Specific Todo Task
    
    PUT to `https://todorestapi.herokuapp.com/api/todos/1`
    
@@ -116,13 +116,13 @@ To test out the API it's recommended to use [Postman](https://chrome.google.com/
     }
    ```
 
-#####7. Delete a Specific Todo Task
+###7. Delete a Specific Todo Task
    
    DELETE to `https://todorestapi.herokuapp.com/api/todos/1`
 
    The response should be a 204 (No Content).
 
-#####8. Logout
+###8. Logout
    
    DELETE to `https://todorestapi.herokuapp.com/api/logout`
 
