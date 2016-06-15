@@ -129,7 +129,7 @@ To test out the API it's recommended to use [Postman](https://chrome.google.com/
    The response should be a 204 (No Content).
 
 
-## Working with the REST API locally
+## Working with the API locally
 ```
 git clone https://github.com/kelsonic/todorestapi.git
 
@@ -140,10 +140,10 @@ npm install
 node server.js
 ```
 
-(It should be running on localhost:3000.)
+(It should now be running on localhost:3000.)
 
 ## Contributing
 If you are interested in contributing, please make a pull-request with a description of your changes.
 
 ## License
-MIT License.
+MIT License. View it in the LICENSE.
