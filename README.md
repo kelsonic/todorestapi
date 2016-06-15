@@ -142,6 +142,19 @@ node server.js
 
 (It should now be running on localhost:3000.)
 
+## Dependencies
+
++ bcryptjs: 2.3.0
++ body-parser: 1.13.3
++ crypto-js: 3.1.5
++ express: 4.13.3
++ JSONWebToken: 5.0.5
++ pg: 4.4.1
++ pg-hstore: 2.3.2
++ sequelize: 3.5.1
++ SQLite: 2.0.2
++ underscore: 1.8.3
+
 ## Contributing
 If you are interested in contributing, please make a pull-request with a description of your changes.
 
