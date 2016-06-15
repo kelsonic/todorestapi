@@ -1,8 +1,8 @@
 # Todo REST API
 
-This is a simple and customizable Todo List REST API I built. 
+This is a simple and customizable Todo List REST API. 
 
-It's intended to help anyone who wants to create a quick backend Express/Node REST API.
+I built it for anyone who wants to create a quick backend Express/Node REST API.
 
 ## Getting Started
 
